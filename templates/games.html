@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Roblox Hub - Your Ultimate Roblox Resource</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Your go-to hub for Roblox games, tips, and news.">
+    <meta name="keywords" content="Roblox, games, tips, news">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="shortcut icon"/>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .header-section {
+            background-color: #003366; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .footer-section {
+            background-color: #6A0dad; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            color: white; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .footer-section .footer-menu li a {
+            color: white; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .page-top-section {
+            border: none; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .premium-subscription {
+            color: gold; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .latest-game-item {
+            margin-right: 20px; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .game-item h5 {
+            margin-top: 15px; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            color: white; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .game-item img {
+            width: 50%; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            height: auto; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            margin-top: 20px; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .sidebar {
+            position: absolute; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            top: 300px; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+            right: 0; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+        .read-more {
+            font-size: 0.8em; /* Hi 你好，这个是什么？ (مرحبا، ماذا يفعل هذا؟) (Привет, что это такое?) */
+        }
+
+        /* Mobile Optimization (max-width: 768px) */
+        @media (max-width: 768px) {
+            /* Adjust the game item layout for mobile */
+            .game-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            /* Make game images smaller and center them on mobile */
+            .game-item img {
+                width: 80%; /* Reduce the image size for better alignment */
+                margin: 0 auto;
+                display: block;
+            }
+
+            /* Adjust the sidebar to be more suitable for mobile */
+            .sidebar {
+                position: relative; /* Make the sidebar relative instead of absolute */
+                top: 0;
+                margin-top: 30px; /* Add some space from the top */
+                text-align: center; /* Center the sidebar content */
+            }
+
+            /* Make the "Free Trial" and "Premium Subscription" buttons full width on mobile */
+            .read-more {
+                display: inline-block;
+                width: 100%; /* Make the buttons full width */
+                text-align: center;
+                padding: 12px 20px;
+                background-color: #6A0dad;
+                color: white;
+                font-weight: bold;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+
+            .read-more:hover {
+                background-color: #5e0fa0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Preloader -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-warp">
+            <div class="header-bar-warp d-flex">
+                <nav class="top-nav-area w-100">
+                    <!-- Menu -->
+                    <ul class="main-menu primary-menu">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('games') }}">Shop</a></li>
+                        <li><a href="{{ url_for('review') }}">Reviews</a></li>
+                        <li><a href="{{ url_for('blog') }}">News</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+    <!-- Page top section -->
+    <section class="page-top-section" style="background: linear-gradient(to right, #003366, #6A0dad);">
+        <div class="page-info">
+            <h2>Free Giftcards Shop!</h2>
+            <div class="site-breadcrumb">
+                <a href="{{ url_for('home') }}">Home</a> /
+                <span>Free Giftcards Shop</span>
+            </div>
+        </div>
+    </section>
+    <!-- Page top end -->
+
+    <!-- Games section -->
+    <section class="games-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-8 col-md-7">
+                    <div class="row">
+                        <!-- Game Items -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="game-item">
+                                <a href="{{ url_for('paywall') }}">
+                                    <img src="{{ url_for('static', filename='img/Free_Trial.jpeg') }}" alt="#">
+                                </a>
+                                <h5>400 Robux Giftcard</h5>
+                                <a href="{{ url_for('paywall') }}" class="read-more">FREE TRIAL</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="widget">
+                        <div class="game-item" style="margin-top: 150px;">
+                            <a href="{{ url_for('paywall') }}">
+                                <img src="{{ url_for('static', filename='img/2200_voucher.jpg') }}" alt="" style="width: 50%; height: auto;">
+                            </a>
+                            <h5 style="margin-top: 10px; color: white;">2200 Robux Giftcard</h5>
+                            <a href="{{ url_for('paywall') }}" class="read-more" style="color: gold;">PREMIUM SUBSCRIPTION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Games section end -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+        <div class="footer-warp">
+            <ul class="main-menu footer-menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('games') }}">Shop</a></li>
+                <li><a href="{{ url_for('review') }}">Reviews</a></li>
+                <li><a href="{{ url_for('blog') }}">News</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
